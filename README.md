@@ -25,5 +25,11 @@ python3 test_measurement_device.py
 ```
 There you can specify the port and IP address, then start and stop tests.
 
-##Disclaimer:
+## Disclaimer:
 The solution I created does not work completely, but I wanted to submit what I had come up with, and the kind of fun I had creating the GUI. Thank you for this opportunity!
+
+## Resources Used:
+[PyQt5 Graphs](https://doc.qt.io/qtforpython-5/PySide2/QtCharts/QChart.html)
+[PyQt5 Socket](https://www.youtube.com/watch?v=Q42mDMWtb7E)
+[C++ Server-Client](https://www.geeksforgeeks.org/udp-server-client-implementation-c/#)
+### CSE 160: Computer Networks
