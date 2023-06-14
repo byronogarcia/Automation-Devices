@@ -32,4 +32,4 @@ The solution I created does not work completely, but I wanted to submit what I h
 [PyQt5 Graphs](https://doc.qt.io/qtforpython-5/PySide2/QtCharts/QChart.html)
 [PyQt5 Socket](https://www.youtube.com/watch?v=Q42mDMWtb7E)
 [C++ Server-Client](https://www.geeksforgeeks.org/udp-server-client-implementation-c/#)
-### CSE 160: Computer Networks
+UC Merced, CSE 160: Computer Networks
