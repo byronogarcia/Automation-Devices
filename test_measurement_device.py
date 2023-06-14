@@ -10,8 +10,8 @@ import subprocess
 
 # Constant values
 # Temporary since the test device has not been set up with this yet
-DEVICE_IP = '127.0.0.1'  # Update with the IP address where the device simulator is running
-DEVICE_PORT = 5000  # Update with the port number where the device simulator is listening
+#DEVICE_IP = '127.0.0.1'  # Update with the IP address where the device simulator is running
+#DEVICE_PORT = 5000  # Update with the port number where the device simulator is listening
 
 
 class TestApp(QMainWindow):
@@ -89,8 +89,7 @@ class TestApp(QMainWindow):
         # Start the C++ device simulator subprocess
         cmd = ['./device_simulator', str(port)]
         self.device_simulator_process = subprocess.Popen(cmd)
-
-        # Need to add code to connect to the test device using socket
+        
 
     def stop_test(self):
         # Disable stop, enable start

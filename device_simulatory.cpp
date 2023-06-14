@@ -1,10 +1,13 @@
 #include <iostream>
 #include <cstring>
 #include <unistd.h>
+
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
 #define BUFFER_SIZE 1024
+
+using namespace std; 
 
 void processPacket(const char* packet, const sockaddr_in& clientAddress) {
     // Process the received packet
