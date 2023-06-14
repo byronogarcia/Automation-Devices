@@ -3,6 +3,7 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt, QDateTime, QTimer
 from PyQt5.QtChart import QChart, QChartView, QLineSeries
 from PyQt5.QtPrintSupport import QPrinter
+
 import sys
 import socket
 import struct
@@ -57,6 +58,7 @@ class TestApp(QMainWindow):
         self.setCentralWidget(central_widget)
 
         # Chart
+        # Tried to figure this out as well as the PDF stuff but it did not work
         self.chart_view = QChartView()
         #self.chart_view.setRenderHint(QPainter.Antialiasing)
         self.chart = QChart()
@@ -89,7 +91,7 @@ class TestApp(QMainWindow):
         # Start the C++ device simulator subprocess
         cmd = ['./device_simulator', str(port)]
         self.device_simulator_process = subprocess.Popen(cmd)
-        
+
 
     def stop_test(self):
         # Disable stop, enable start

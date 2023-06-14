@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+// added below because close() would not work otherwise
 #include <unistd.h>
 
 #include <arpa/inet.h>
@@ -7,28 +8,27 @@
 
 #define BUFFER_SIZE 1024
 
-using namespace std; 
+// used to using namespaces but this broke pieces in the code
+//using namespace std; 
 
 void processPacket(const char* packet, const sockaddr_in& clientAddress) {
-    // Process the received packet
+    // Recieving the package
     std::string request(packet);
     std::cout << "Received packet: " << request << std::endl;
-
-    // Implement your logic to handle the received packet
-    // ...
 
     // Prepare the response message
     std::string response;
     if (request == "ID;") {
-        // Discovery message
-        response = "ID;MODEL=m;SERIAL=n;";
-    } else if (request.find("TEST;CMD=START") != std::string::npos) {
-        // Test start command
+        // Need to add the ability to change these
+        response = "ID;MODEL=;SERIAL=;";
+    } 
+    else if (request.find("TEST;CMD=START") != std::string::npos) {
         response = "TEST;RESULT STARTED;";
-    } else if (request.find("TEST;CMD=STOP") != std::string::npos) {
-        // Test stop command
+    } 
+    else if (request.find("TEST;CMD=STOP") != std::string::npos) {
         response = "TEST;RESULT STOPPED;";
-    } else {
+    } 
+    else {
         // Unknown message, ignore
         return;
     }
@@ -40,15 +40,19 @@ void processPacket(const char* packet, const sockaddr_in& clientAddress) {
     close(socketDescriptor);
 }
 
+
 int main(int argc, char* argv[]) {
     if (argc != 2) {
+        // got to make sure to specify the port so that instances can have their own
         std::cerr << "Usage: ./device_simulator <port>" << std::endl;
         return 1;
     }
 
     int port = std::stoi(argv[1]);
 
-    // Create a UDP socket
+    // UDP socket
+    // Unfortunately in testing the failed to create and bind popped up more than expected
+    // Not sure why it was popping up, need to test further and log more
     int socketDescriptor = socket(AF_INET, SOCK_DGRAM, 0);
     if (socketDescriptor < 0) {
         std::cerr << "Failed to create socket" << std::endl;
