@@ -27,13 +27,10 @@
 
 CC=g++
 CFLAGS=-std=c++11 -Wall -Wextra
-LDFLAGS=
 
-TARGET = testDevice
-
-$(TARGET): testDevice.cpp
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(TARGET) testDevice.cpp
+device_simulator: device_simulatory.cpp
+	$(CC) $(CFLAGS) device_simulatory.cpp -o device_simulator
 
 clean:
-	rm -f $(TARGET)
+	rm -f device_simulator
 
