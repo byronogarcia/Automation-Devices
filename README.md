@@ -30,6 +30,11 @@ The solution I created does not work completely, but I wanted to submit what I h
 
 ## Resources Used:
 [PyQt5 Graphs](https://doc.qt.io/qtforpython-5/PySide2/QtCharts/QChart.html)
+
 [PyQt5 Socket](https://www.youtube.com/watch?v=Q42mDMWtb7E)
+
 [C++ Server-Client](https://www.geeksforgeeks.org/udp-server-client-implementation-c/#)
+
+[PyQt5 Tutorial](https://build-system.fman.io/pyqt5-tutorial)
+
 UC Merced, CSE 160: Computer Networks
